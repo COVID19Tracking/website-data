@@ -13,6 +13,6 @@
     "node-fetch": "^2.6.1"
   },
   "scripts": {
-    "run": "node index.js"
+    "build": "node index.js"
   }
 }
