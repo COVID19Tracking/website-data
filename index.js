@@ -5,7 +5,7 @@ const screenshots = require('./lib/screenshots')
 const bigQuery = require('./lib/bigquery')
 
 const options = commandLineArgs([
-  { name: 'volunteer', alias: 'v', type: Boolean },
+  { name: 'volunteers', alias: 'v', type: Boolean },
   { name: 'screenshots', alias: 's', type: Boolean },
   { name: 'bigquery', alias: 'b', type: Boolean },
 ])
