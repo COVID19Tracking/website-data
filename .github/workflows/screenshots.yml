@@ -1,7 +1,7 @@
 name: Website data build
 on:
   schedule:
-    - cron: '5,30 * * * *'
+    - cron: '*/30 * * * *'
 
 jobs:
   build-data:
@@ -38,7 +38,7 @@ jobs:
           BIGQUERY_CREDENTIALS: ${{ secrets.BIGQUERY_CREDENTIALS }}
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         run: |
-          yarn build
+          yarn build:screenshots
 
       - name: Commit data files
         uses: stefanzweifel/git-auto-commit-action@v4.1.2
