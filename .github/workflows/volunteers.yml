@@ -1,7 +1,7 @@
 name: Volunteer data
 on:
   schedule:
-    - cron: '30 */2 * * *'
+    - cron: '40 */2 * * *'
 
 jobs:
   build-data:
