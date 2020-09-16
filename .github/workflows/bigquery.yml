@@ -1,4 +1,4 @@
-name: Website data build
+name: BigQuery data
 on:
   schedule:
     - cron: '*/15 * * * *'

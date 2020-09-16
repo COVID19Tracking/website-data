@@ -1,4 +1,4 @@
-name: Website data build
+name: Volunteer data
 on:
   schedule:
     - cron: '30 */2 * * *'
