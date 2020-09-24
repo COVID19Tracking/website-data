@@ -4,7 +4,7 @@ on:
     - cron: '40 * * * *'
 
 jobs:
-  build-data:
+  update-index:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout build repo
