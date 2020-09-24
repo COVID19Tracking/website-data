@@ -1,0 +1,42 @@
+name: Long Term Care Facilities index
+on:
+  schedule:
+    - cron: '40 * * * *'
+
+jobs:
+  build-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout build repo
+        uses: actions/checkout@v2
+        with:
+          path: ./
+
+      - name: Checkout data repo
+        uses: actions/checkout@v2
+        with:
+          ref: 'data'
+          path: ./_data
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.yarn
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Update Long Term Care Algolia index
+        env:
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_LTC_FACILITY_INDEX: ${{ secrets.ALGOLIA_LTC_FACILITY_INDEX }}
+        run: |
+          yarn build:ltcfacilities
