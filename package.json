@@ -6,6 +6,7 @@
   "dependencies": {
     "@google-cloud/bigquery": "^5.2.0",
     "@slack/web-api": "^5.12.0",
+    "algoliasearch": "^4.5.1",
     "command-line-args": "^5.1.1",
     "dotenv": "^8.2.0",
     "fast-xml-parser": "^3.17.4",
@@ -17,6 +18,7 @@
     "build": "node index.js",
     "build:bigquery": "node index.js --bigquery",
     "build:screenshots": "node index.js --screenshots",
-    "build:volunteers": "node index.js --volunteers"
+    "build:volunteers": "node index.js --volunteers",
+    "build:ltcfacilities": "node index.js --ltcfacilities"
   }
 }
