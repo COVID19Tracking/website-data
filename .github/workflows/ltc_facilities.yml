@@ -35,6 +35,8 @@ jobs:
 
       - name: Update Long Term Care Algolia index
         env:
+          BIGQUERY_CREDENTIALS: ${{ secrets.BIGQUERY_CREDENTIALS }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
           ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
           ALGOLIA_LTC_FACILITY_INDEX: ${{ secrets.ALGOLIA_LTC_FACILITY_INDEX }}
