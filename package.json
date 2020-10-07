@@ -12,13 +12,15 @@
     "fast-xml-parser": "^3.17.4",
     "fs-extra": "^9.0.1",
     "luxon": "^1.25.0",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "twitter": "^1.7.1"
   },
   "scripts": {
     "build": "node index.js",
     "build:bigquery": "node index.js --bigquery",
     "build:screenshots": "node index.js --screenshots",
     "build:volunteers": "node index.js --volunteers",
-    "build:ltcfacilities": "node index.js --ltcfacilities"
+    "build:ltcfacilities": "node index.js --ltcfacilities",
+    "build:tweets": "node index.js --tweets"
   }
 }
