@@ -1,7 +1,7 @@
 name: Tweets
 on:
   schedule:
-    - cron: '20 * * * *'
+    - cron: '30 * * * *'
 
 jobs:
   build-data:
@@ -35,6 +35,8 @@ jobs:
 
       - name: Build data files
         env:
+          BIGQUERY_CREDENTIALS: ${{ secrets.BIGQUERY_CREDENTIALS }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
           TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
           TWITTER_API_TOKEN_KEY: ${{ secrets.TWITTER_API_TOKEN_KEY }}
