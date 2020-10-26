@@ -2,6 +2,8 @@ name: Tweets
 on:
   schedule:
     - cron: '30 * * * *'
+  issues:
+    types: [edited]
 
 jobs:
   build-data:
