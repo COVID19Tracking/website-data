@@ -5,6 +5,7 @@ const screenshots = require('./lib/screenshots')
 const bigQuery = require('./lib/bigquery')
 const longTermCareFacilities = require('./lib/long-term-care-facilities')
 const tweets = require('./lib/tweets')
+const annotations = require('./lib/annotations')
 
 const options = commandLineArgs([
   { name: 'volunteers', alias: 'v', type: Boolean },
@@ -12,6 +13,7 @@ const options = commandLineArgs([
   { name: 'bigquery', alias: 'b', type: Boolean },
   { name: 'ltcfacilities', alias: 'l', type: Boolean },
   { name: 'tweets', alias: 't', type: Boolean },
+  { name: 'annotations', alias: 'a', type: Boolean },
 ])
 
 const tasks = []
@@ -33,6 +35,10 @@ if (options.ltcfacilities) {
 
 if (options.tweets) {
   tasks.push(tweets())
+}
+
+if (options.annotations) {
+  tasks.push(annotations())
 }
 
 Promise.all(tasks).then(() => {
