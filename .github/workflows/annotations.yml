@@ -37,6 +37,7 @@ jobs:
         env:
           BIGQUERY_CREDENTIALS: ${{ secrets.BIGQUERY_CREDENTIALS }}
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY}}
         run: |
           yarn build:annotations
 
