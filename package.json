@@ -6,6 +6,7 @@
   "dependencies": {
     "@google-cloud/bigquery": "^5.2.0",
     "@slack/web-api": "^5.12.0",
+    "airtable": "^0.10.0",
     "algoliasearch": "^4.5.1",
     "command-line-args": "^5.1.1",
     "dotenv": "^8.2.0",
@@ -21,6 +22,7 @@
     "build:screenshots": "node index.js --screenshots",
     "build:volunteers": "node index.js --volunteers",
     "build:ltcfacilities": "node index.js --ltcfacilities",
-    "build:tweets": "node index.js --tweets"
+    "build:tweets": "node index.js --tweets",
+    "build:annotations": "node index.js --annotations"
   }
 }
