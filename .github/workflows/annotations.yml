@@ -1,4 +1,4 @@
-name: BigQuery data
+name: Annotations data
 on:
   schedule:
     - cron: '*/20 * * * *'
