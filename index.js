@@ -6,6 +6,7 @@ const bigQuery = require('./lib/bigquery')
 const longTermCareFacilities = require('./lib/long-term-care-facilities')
 const tweets = require('./lib/tweets')
 const annotations = require('./lib/annotations')
+const hhs = require('./lib/hhs')
 
 const options = commandLineArgs([
   { name: 'volunteers', alias: 'v', type: Boolean },
@@ -14,6 +15,7 @@ const options = commandLineArgs([
   { name: 'ltcfacilities', alias: 'l', type: Boolean },
   { name: 'tweets', alias: 't', type: Boolean },
   { name: 'annotations', alias: 'a', type: Boolean },
+  { name: 'hhs', alias: 'h', type: Boolean },
 ])
 
 const tasks = []
@@ -39,6 +41,10 @@ if (options.tweets) {
 
 if (options.annotations) {
   tasks.push(annotations())
+}
+
+if (options.hhs) {
+  tasks.push(hhs())
 }
 
 Promise.all(tasks).then(() => {
