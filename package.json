@@ -9,6 +9,7 @@
     "airtable": "^0.10.0",
     "algoliasearch": "^4.5.1",
     "command-line-args": "^5.1.1",
+    "csv-parse": "^4.14.1",
     "dotenv": "^8.2.0",
     "fast-xml-parser": "^3.17.4",
     "fs-extra": "^9.0.1",
@@ -23,6 +24,7 @@
     "build:volunteers": "node index.js --volunteers",
     "build:ltcfacilities": "node index.js --ltcfacilities",
     "build:tweets": "node index.js --tweets",
-    "build:annotations": "node index.js --annotations"
+    "build:annotations": "node index.js --annotations",
+    "build:hhs": "git clone --depth 1 https://github.com/COVID19Tracking/covid-tracking-data _hhs && node index.js --hhs"
   }
 }
