@@ -1,7 +1,7 @@
 name: HHS data index
 on:
   schedule:
-    - cron: '10 3 * * *'
+    - cron: '30 * * * *'
 
 jobs:
   update-index:
@@ -33,7 +33,7 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: Update Long Term Care Algolia index
+      - name: Update HHS data
         env:
           BIGQUERY_CREDENTIALS: ${{ secrets.BIGQUERY_CREDENTIALS }}
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
