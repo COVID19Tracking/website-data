@@ -42,3 +42,22 @@ jobs:
           ALGOLIA_LTC_FACILITY_INDEX: ${{ secrets.ALGOLIA_LTC_FACILITY_INDEX }}
         run: |
           yarn build:hhs
+
+      - name: Commit data files
+        uses: stefanzweifel/git-auto-commit-action@v4.1.2
+        with:
+          commit_message: Update data data
+          repository: ./_data
+          file_pattern: ./**
+          commit_author: COVID Tracking Project Web Data Builder <accounts@covidtracking.com>
+
+      - name: Prepare artifacts
+        run: |
+          rm -rf ./_data/.git
+          tar -czvf data-files.tar.gz ./_data
+
+      - name: Upload data artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: data-files
+          path: ./data-files.tar.gz
