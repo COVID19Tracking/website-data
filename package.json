@@ -8,6 +8,7 @@
     "@slack/web-api": "^5.12.0",
     "airtable": "^0.10.0",
     "algoliasearch": "^4.5.1",
+    "axios": "^0.21.1",
     "command-line-args": "^5.1.1",
     "csv-parse": "^4.14.1",
     "dotenv": "^8.2.0",
@@ -19,7 +20,7 @@
   },
   "scripts": {
     "build": "node index.js",
-    "build:bigquery": "node index.js --bigquery",
+    "build:bigquery": "NODE_OPTIONS=--max_old_space_size=8192 node index.js --bigquery",
     "build:screenshots": "node index.js --screenshots",
     "build:volunteers": "node index.js --volunteers",
     "build:ltcfacilities": "node index.js --ltcfacilities",
