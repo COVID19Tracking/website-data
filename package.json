@@ -26,6 +26,7 @@
     "build:ltcfacilities": "node index.js --ltcfacilities",
     "build:tweets": "node index.js --tweets",
     "build:annotations": "node index.js --annotations",
+    "build:crdtapi": "node index.js --crdtapi",
     "build:hhs": "rm -rf ./_hhs && git clone --depth 1 https://github.com/COVID19Tracking/covid-tracking-data ./_hhs && node index.js --hhs"
   }
 }
