@@ -7,6 +7,7 @@ const longTermCareFacilities = require('./lib/long-term-care-facilities')
 const tweets = require('./lib/tweets')
 const annotations = require('./lib/annotations')
 const crdtApi = require('./lib/crdt-api')
+const crdtAnnotations = require('./lib/crdt-annotations')
 const hhs = require('./lib/hhs')
 
 const options = commandLineArgs([
@@ -51,6 +52,7 @@ if (options.hhs) {
 
 if (options.crdtapi) {
   tasks.push(crdtApi())
+  tasks.push(crdtAnnotations())
 }
 
 Promise.all(tasks).then(() => {
