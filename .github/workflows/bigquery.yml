@@ -3,7 +3,7 @@ on:
   repository_dispatch:
     types: [bigquery-build]
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '15 1 * * *'
 
 jobs:
   build-data:
